@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  input, button {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  #downloadLink a {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  #viewer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  canvas {
+    border: 1px solid #ccc;
+  }
+  

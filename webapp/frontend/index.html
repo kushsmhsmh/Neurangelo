@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>2D to 3D Mesh Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>2D to 3D Mesh Generator</h1>
+  <input type="file" id="imageInput" />
+  <button onclick="uploadImage()">Convert</button>
+  <p id="status"></p>
+  <div id="viewer"></div>
+
+  <!-- Three.js + GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
