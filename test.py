@@ -13,7 +13,7 @@ feature_extractor = GLPNImageProcessor.from_pretrained("vinvino02/glpn-nyu")
 model = GLPNForDepthEstimation.from_pretrained("vinvino02/glpn-nyu")
 
 #loading and resizing image
-image = Image.open("../Neurangelo/DATA/test.jpg")
+image = Image.open("Enter path to your image")
 new_height = 480 if image.height > 480 else image.height
 new_height -= new_height % 32
 new_width = int(new_height * image.width / image.height)
@@ -69,7 +69,7 @@ pcd = pcd_raw.select_by_index(ind)
 
 pcd.estimate_normals()
 pcd.orient_normals_towards_camera_location()
-o3d.visualization.draw_geometries([pcd])
+#o3d.visualization.draw_geometries([pcd])
 
 #surface reconstruction
 mesh = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(pcd, depth=10, n_threads =  2)[0]
@@ -77,10 +77,10 @@ mesh = o3d.geometry.TriangleMesh.create_from_point_cloud_poisson(pcd, depth=10, 
 rotation = mesh.get_rotation_matrix_from_xyz((np.pi, 0, 0))
 mesh.rotate(rotation, center = (0, 0, 0))
 
-o3d.visualization.draw_geometries([mesh], mesh_show_back_face=True)
+#o3d.visualization.draw_geometries([mesh], mesh_show_back_face=True)
 
 #mesh_uniform = mesh.paint_uniform_color([0.9, 0.8, 0.9])
 #mesh_uniform.compute_vertex_normals()
 #o3d.visualization.draw_geometries([mesh_uniform], mesh_show_back_face=True)
 
-o3d.io.write_triangle_mesh("../Neurangelo/RESULTS/office.obj", mesh)
+#o3d.io.write_triangle_mesh("Enter path to save the created mesh", mesh)
